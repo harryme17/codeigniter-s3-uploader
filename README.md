@@ -1,68 +1,49 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter 4 Secure S3 Uploader
 
-## What is CodeIgniter?
+[![Built with CodeIgniter 4](https://img.shields.io/badge/Built%20with-CodeIgniter%204-EF4423.svg?style=flat-square&logo=codeigniter)](https://codeigniter.com)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+A simple yet powerful web application built with CodeIgniter 4 that demonstrates how to securely upload files (images, zips) to a private AWS S3 bucket. Access to the uploaded files is provided via temporary, expiring presigned URLs, ensuring that the files in the bucket remain private and secure.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+The user interface is built with Bootstrap 5 for a clean, modern, and responsive experience.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Features
 
-## Installation & updates
+-   **Secure File Uploads:** Files are sent directly to a private S3 bucket.
+-   **Private by Default:** The S3 bucket is configured to block all public access.
+-   **Temporary Access:** Generates a short-lived (5-minute) **presigned URL** for the user to view or download their file.
+-   **HMVC Architecture:** Organized into a `S3Uploader` module for clean separation of concerns.
+-   **Modern UI:** A clean and responsive user interface powered by Bootstrap 5.
+-   **Validation:** Server-side validation for file size and type.
+-   **Clear Feedback:** Provides a loading spinner during upload and clear success/error messages.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## How It Works
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+The core security model relies on AWS IAM credentials and S3 Presigned URLs.
 
-## Setup
+1.  The user selects a file and submits the form.
+2.  The CodeIgniter backend validates the file.
+3.  The application, using its secure IAM credentials, uploads the file object to the **private** S3 bucket.
+4.  After a successful upload, the application requests a special **presigned URL** from AWS S3 for that specific file.
+5.  This URL contains a temporary authentication token and an expiration time.
+6.  The user is given this temporary URL, allowing them to access the file for a limited time, even though the bucket itself is not public.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## Prerequisites
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Before you begin, ensure you have the following installed:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+-   PHP (version 8.0 or higher recommended)
+-   Composer
+-   An AWS Account with a configured S3 Bucket and an IAM user with S3 permissions.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Setup and Installation
 
-## Repository Management
+Follow these steps to get the project running on your local machine.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+**1. Clone the repository:**
+```bash
+git clone https://github.com/YOUR_USERNAME/codeigniter-s3-uploader.git
+cd codeigniter-s3-uploader
