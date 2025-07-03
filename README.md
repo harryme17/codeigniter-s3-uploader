@@ -97,7 +97,8 @@ The application will be available at `http://localhost:8080/uploader`.
 
 
 ### Success Page (Image)
-![image](https://github.com/user-attachments/assets/d7ceb9e5-caec-4951-8e72-83668c099aa3)
+![image](https://github.com/user-attachments/assets/6952f289-763b-408a-b2f5-856fba4a14f7)
+
 
 
 ## Contributing
