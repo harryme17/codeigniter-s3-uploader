@@ -1,0 +1,25 @@
+# Environment configuration
+.env
+
+# Composer dependencies
+/vendor
+
+# Log and cache files
+/writable/cache/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+/writable/debugbar/*
+
+# Built-in server
+/spark
+
+# NetBeans project directory
+/nbproject/
+
+# Mac OS folder attributes
+.DS_Store
+
+# PHPUnit
+/phpunit.xml
+/build/
