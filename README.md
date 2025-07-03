@@ -1,6 +1,7 @@
 # CodeIgniter 4 Secure S3 Uploader
 
 [![Built with CodeIgniter 4](https://img.shields.io/badge/Built%20with-CodeIgniter%204-EF4423.svg?style=flat-square&logo=codeigniter)](https://codeigniter.com)
+[![Built with AWS S3](https://img.shields.io/badge/Built%20with-AWS%20S3-232F3E.svg?style=flat-square&logo=amazon&s=24)](https://aws.amazon.com/s3/)
 
 A simple yet powerful web application built with CodeIgniter 4 that demonstrates how to securely upload files (images, zips) to a private AWS S3 bucket. Access to the uploaded files is provided via temporary, expiring presigned URLs, ensuring that the files in the bucket remain private and secure.
 
@@ -92,12 +93,12 @@ The application will be available at `http://localhost:8080/uploader`.
 ## Screenshots
 
 ### Upload Form
-![Upload Form](path/to/your/screenshot-form.png)
+![image](https://github.com/user-attachments/assets/425745d9-8bd9-419b-b554-d1888b7ad4ba)
+
 
 ### Success Page (Image)
-![Success Page](path/to/your/screenshot-success.png)
+![image](https://github.com/user-attachments/assets/d7ceb9e5-caec-4951-8e72-83668c099aa3)
 
-*(To add your own screenshots, place them in a folder like `public/screenshots` and update the paths above.)*
 
 ## Contributing
 
