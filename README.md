@@ -2,6 +2,7 @@
 
 [![Built with CodeIgniter 4](https://img.shields.io/badge/Built%20with-CodeIgniter%204-EF4423.svg?style=flat-square&logo=codeigniter)](https://codeigniter.com)
 [![Built with AWS S3](https://img.shields.io/badge/Built%20with-AWS%20S3-232F3E.svg?style=flat-square&logo=amazon&s=24)](https://aws.amazon.com/s3/)
+[![UI Built with Bootstrap](https://img.shields.io/badge/Built%20with-Bootstrap-563D7C.svg?style=flat-square&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
 A simple yet powerful web application built with CodeIgniter 4 that demonstrates how to securely upload files (images, zips) to a private AWS S3 bucket. Access to the uploaded files is provided via temporary, expiring presigned URLs, ensuring that the files in the bucket remain private and secure.
 
